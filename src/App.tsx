@@ -74,6 +74,7 @@ function App() {
       {!hasGameStarted ? <div>
         <h1>Rock Paper Scissors</h1>
         <p>Win over the computer and prove that mankind is supreme!</p>
+        <p>First to score 5 points wins!</p>
         <button onClick={() => setHasGameStarted(true)}>Start Game</button>
       </div> : (<div className='wrapper'>
         <h1>Rock Paper Scissors</h1>
