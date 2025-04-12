@@ -9,18 +9,26 @@ import Header from './components/Header';
 import Finish from './components/Finish';
 
 function App() {
+  // იდეალური ადგილია ქასთომ ჰუკისთვის
+  // ერთ სტეიტში შეგიძლია გააერთიანო და საჭირო სტეიტი მეთოდი დააბრუნო
+  // const {}  = useGameState();
   const [resultText, setResultText] = useState('');
   const [myScore, setMyScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
   const [hasGameStarted, setHasGameStarted] = useState(false)
   const [hasGameFinished, setHasGameFinished] = useState(false);
 
+
+  // ასეთი სტატიკური კონფიგურაცია კომპონენტის სკოუპის გარეთ გაიტანო ჯობია
+  // ყოველ რენდერზე ახალი ობიექტი იქმნება
+  // /src/lib/config/*.ts  ში შეგიძლიაა გაიტანო
   const icons: Icon[] = [
     { id: 1, src: rockIcon, alt: 'Rock' },
     { id: 2, src: paperIcon, alt: 'Paper' },
     { id: 3, src: scissorsIcon, alt: 'Scissors' },
   ];
 
+  // ესეც შეგიძლია გაიტანო /src/lib/config/*.ts  ში
   const options = {
     win: 'You win !',
     lose: 'You lose !',
@@ -49,6 +57,7 @@ function App() {
   }
 
   function getResultTextColor(): string {
+    // ჩადგმული ტერნარი ოპერატორის გამოყებებას if else სტრუქტურა ჯობია, ვფირობ უფრო მართვადი, წაკითხვადია
     return resultText === options.win ? 'green-text' : resultText === options.lose ? 'red-text' : 'yellow-text'
   }
 
